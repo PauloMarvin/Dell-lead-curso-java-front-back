@@ -21,8 +21,7 @@ public class OficinaJavaWebServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-	@SuppressWarnings("unlikely-arg-type")
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Filme coringa = new Filme("Coringa","drama" , 2019);
 		Filme matrix = new Filme("Matrix","acao" , 1991);
 		Filme forrestGump = new Filme("Forres Gump","drama" , 1994);
@@ -32,11 +31,11 @@ public class OficinaJavaWebServlet extends HttpServlet {
 		todosFilmes.add(matrix);
 		todosFilmes.add(forrestGump);
 		
-		String ano= request.getParameter("ano");
+		String ano= req.getParameter("ano");
 		
-		response.setContentType("text/HTML");
+		resp.setContentType("text/HTML");
 		
-		PrintWriter out = response.getWriter();
+		PrintWriter out = resp.getWriter();
 		
 		out.println("<h2>Lista de Filmes, Por ano </h2>");
 		
@@ -49,7 +48,7 @@ public class OficinaJavaWebServlet extends HttpServlet {
 	        	out.println(String.format(" Genero: %s", filme.getGenero()));
 	        	out.println(String.format(" Ano: %s </li>", filme.getAno()));
 			}
-			
+			out.close();
 		}
 				
 		}

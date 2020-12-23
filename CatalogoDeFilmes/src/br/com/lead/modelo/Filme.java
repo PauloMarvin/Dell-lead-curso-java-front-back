@@ -14,10 +14,6 @@ public class Filme {
 		
 	}
 	
-	
-	
-	
-
 
 	public String getNome() {
 		return nome;
