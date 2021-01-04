@@ -17,10 +17,8 @@ public class Filme {
 	private String genero;
 	private Integer ano;
 	
-
 	public Filme() {
-		
-		
+	
 	}
 	
 	public Filme(String nome, String genero, Integer ano) {
