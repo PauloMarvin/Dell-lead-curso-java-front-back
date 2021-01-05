@@ -11,6 +11,7 @@
 
 		<!-- Aqui são listadas todas as entidades -->
 		<class>br.com.lead.modelo.Filme</class>
+		<class>br.com.lead.modelo.Autor</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->
