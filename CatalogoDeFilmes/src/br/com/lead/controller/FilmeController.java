@@ -52,7 +52,8 @@ public class FilmeController {
 		modelAndView.setViewName("consultar-filme-view");
 		modelAndView.addObject("nome", filme.getNome());
 		modelAndView.addObject("genero", filme.getGenero());
-		modelAndView.addObject("ano", filme.getAno());
+		modelAndView.addObject("ano", filme.getAno())	;
+		
 
 		return modelAndView;
 	}

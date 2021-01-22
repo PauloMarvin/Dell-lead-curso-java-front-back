@@ -8,5 +8,10 @@
 </head>
 <body>
 
+<h1> Nome do autor: ${nome} </h1>
+    <label> data de nascimento: ${dataNascimento} </label>
+    <br/>
+
+
 </body>
 </html>
