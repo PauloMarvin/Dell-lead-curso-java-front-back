@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Autor {
 	
@@ -18,6 +20,7 @@ public class Autor {
 	private String nome;
 	
 	@Column(name =  "data_nascimento")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataNascimento;
 
 	public Integer getId() {

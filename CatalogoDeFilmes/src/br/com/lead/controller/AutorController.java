@@ -15,20 +15,17 @@ import br.com.lead.util.JPAUtil;
 
 @Controller
 public class AutorController {
-	
-	@RequestMapping(value = "/consultar-autor", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/consultar-autor", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ModelAndView consultarFilme(@RequestParam Integer id) {
-		
+	public Autor consultarAutor(@RequestParam Integer id) {
+
 		EntityManager entityManager = JPAUtil.getEntityManager();
 
 		Autor autor = entityManager.find(Autor.class, id);
 
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("consultar-autor-view");
-		modelAndView.addObject("nome", autor.getNome());
-		modelAndView.addObject("dataNascimento", autor.getDataNascimento());
+		entityManager.close();
 
-		return modelAndView;
+		return autor;
 	}
 }
