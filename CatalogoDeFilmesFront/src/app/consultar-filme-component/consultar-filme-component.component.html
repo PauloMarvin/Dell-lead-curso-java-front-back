@@ -1,0 +1,18 @@
+<h2>Consultar Filme</h2>
+<form #c="ngForm" (ngSubmit)="onSubmit(c)">
+    <label> Nome do filme para pesquisa: </label>
+    <br/>
+    <input type="text" name="id" ngModel="">
+    
+    <button type="submit">Pesquisar</button>
+</form>
+
+
+<div *ngIf = "filmeDados!=null" >
+    <h2>Filme Pesquisado</h2>
+    <label> Nome: {{ filmeDados.nome }}</label><br/>
+    <label> Gênero: {{ filmeDados.genero }}</label><br/>
+    <label> Ano de publicação: {{ filmeDados.ano }}</label><br/>
+    <label> Nome autor: {{ filmeDados.autor.nome }}</label><br/>
+    <label> Data de nascimento do autor: {{ filmeDados.autor.dataNascimento }}</label><br/>
+</div>

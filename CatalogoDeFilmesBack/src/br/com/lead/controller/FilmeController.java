@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.EntityManager;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.lead.modelo.Autor;
 import br.com.lead.modelo.Filme;
 import br.com.lead.util.JPAUtil;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @Controller
 public class FilmeController {
 	@RequestMapping(value = "/persistir-filme", method = RequestMethod.POST, produces = "application/json")
